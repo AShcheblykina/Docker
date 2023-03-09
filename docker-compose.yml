@@ -1,0 +1,15 @@
+version: '3.7'
+services:
+  mysql:
+    image: postgres:12-alpine
+    ports:
+      - '5432:5432'
+    volumes:
+      - ./data:/var/lib/postgresql
+    environment:
+      - POSTGRES_DB=postgresDB
+      - POSTGRES_USER=postgres
+      - POSTGRES_PASSWORD=example
+
+
+#  docker run --name docker-mysql-1 -p 5432:5432 -e POSTGRES_PASSWORD=example -d postgres:12-alpine
